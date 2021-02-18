@@ -1,0 +1,2 @@
+class Lineaccount < ApplicationRecord
+end
