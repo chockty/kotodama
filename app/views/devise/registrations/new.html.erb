@@ -1,29 +1,51 @@
-<h2>Sign up</h2>
+<div class="devise-screen">
+<h2 id="devise-title">Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="input-form">
+<%= form_with model: @user, url: user_registration_path, local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, id: "email" %>
   </div>
 
+  <% if @sns.present?  %>
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= hidden_field_tag :sns_auth, @sns.id %>
+    <p id="devise-sentence">LINE認証をご利用いただきありがとうございます。</p>
+    <p id="devise-sentence">アカウント管理用にメールアドレスの入力をお願いいたします。</p>
+    <p id="devise-sentence">（既にユーザ登録済みの方は、登録したユーザ情報と一致するように編集をお願いいたします。）</p>
   </div>
+  <% else %>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> 文字以上)</em>
+      <% end %><br />
+      <%= f.password_field :password %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <div class="field">
+      <p id="devise-sentence">LINEアカウントと紐づける場合は、必要項目を入力後以下のリンクをクリックしてください。</p>
+      <p id="devise-sentence">LINEアカウントと紐づけることによって次回以降のログインにて必要項目の入力を省くことができます。</p>
+      <%= link_to 'LINEアカウントを紐づける', user_line_omniauth_authorize_path, id:"line-connect", method: :post %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+</div>
