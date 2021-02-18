@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', :git => "https://github.com/heartcombo/devise.git", ref: '8bb358cf80a632d3232c3f548ce7b95fd94b6eb2'
 gem 'date'
 gem 'react-rails'
+gem 'omniauth-line', :git => "https://github.com/gomo/omniauth-line.git", ref: '9b0f6c05f7e6e6dfcecf4d4fc385210bb0e6569d'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-oauth2'
+
