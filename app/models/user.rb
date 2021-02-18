@@ -37,5 +37,3 @@ class User < ApplicationRecord
     return {user: user, sns: sns}
   end
 end
-
-end
