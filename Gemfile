@@ -58,4 +58,6 @@ gem 'react-rails'
 gem 'omniauth-line', :git => "https://github.com/gomo/omniauth-line.git", ref: '9b0f6c05f7e6e6dfcecf4d4fc385210bb0e6569d'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-oauth2'
+gem 'line-bot-api'
+gem 'open-uri'
 
