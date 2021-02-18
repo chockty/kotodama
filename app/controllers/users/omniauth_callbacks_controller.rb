@@ -1,30 +1,29 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  # You should configure your model like this:
-  # devise :omniauthable, omniauth_providers: [:twitter]
 
-  # You should also create an action method in this controller like this:
-  # def twitter
-  # end
+  def line
+    authorization
+  end
 
-  # More info at:
-  # https://github.com/heartcombo/devise#omniauth
-
-  # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
-
-  # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
-
-  # protected
-
-  # The path used when OmniAuth fails
-  # def after_omniauth_failure_path_for(scope)
-  #   super(scope)
-  # end
+  private
+  def authorization
+    user_info = User.from_omniauth(request.env["omniauth.auth"])
+    @sns = user_info[:sns]
+    @user = user_info[:user]
+    # LINEアカウントの情報がDBにある場合はindexのページへ遷移する。
+    if Lineaccount.find_by(uid: @sns.uid)
+      @sns = Lineaccount.find_by(uid: @sns.uid)
+      if @user = User.find(@sns.user_id)
+        sign_in_and_redirect @user, event: :authentication
+      else
+        render template: 'devise/registrations/new'
+      end
+    # LINEアカウントの情報がDBにない場合は、snsを保存した上で、user情報を持って新規登録のページへ遷移する。
+    elsif !Lineaccount.find_by(uid: @sns.uid)
+      @sns.save
+      @sns_auth = Lineaccount.find_by(uid: @sns.uid)
+      render template: 'devise/registrations/new'
+    end
+  end
 end
