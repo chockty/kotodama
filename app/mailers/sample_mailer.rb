@@ -9,4 +9,5 @@ class SampleMailer < ApplicationMailer
     @user = user
     mail to:      user.email,
          subject: '登録ありがとうございます！'
+  end
 end
