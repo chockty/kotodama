@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  root to: 'contents#top'
   post '/callback' => 'webhooks#callback'
 end
