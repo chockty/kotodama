@@ -1,0 +1,13 @@
+<div class="top-main">
+  <h1 id="top-title">koto-damaへようこそ</h1>
+  <h3 id="top-content">今、あなたの思うことを</h3>
+  <h3 id="top-content">自由に書いてみてください</h3>
+  <h3 id="top-content">書いた言葉分だけ</h3>
+  <h3 id="top-content">あなたの「本当の思い」が見えてきます</h3>
+  <h3 id="top-content">あなた自身が、少しでも、幸せになるために</h3>
+  <div class="links-tag">
+    <%= link_to("LOGIN",  new_user_session_path, id: "link-tag", class: "new-session")  %>
+    <%= link_to("新規登録", new_user_registration_path, id: "link-tag", class: "new-registration") %>
+    <%= link_to("LOGOUT", destroy_user_session_path, id: "link-tag", method: :delete, class: "new-registration") %>
+  </div>
+</div>
