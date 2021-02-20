@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   resources :diaries, only:[:create, :show, :edit, :update]
+  resources :memos, only:[:create, :show, :edit, :update]
   resources :users, only:[:show, :edit, :update] do
     resources :contents, only:[:index]
     post '/contents/search' => "contents#search"
