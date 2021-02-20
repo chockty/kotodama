@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   root to: 'contents#top'
   post '/callback' => 'webhooks#callback'
+  post '/users/:user_id/contents' => 'contents#index'
 end
