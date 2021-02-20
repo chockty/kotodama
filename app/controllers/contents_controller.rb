@@ -16,6 +16,31 @@ class ContentsController < ApplicationController
     end
   end
 
+  def search
+    keyword = params[:keyword][0]
+    datestart = params[:datestart][0]
+    dateend = params[:dateend][0]
+    result = []
+
+    if keyword != nil && datestart != nil && dateend != nil
+      diaries = Diary.where(user_id: current_user.id).where("content LIKE(?)", "%#{keyword}%").where("created_at BETWEEN (?) AND (?)", "#{datestart}%", "#{dateend}%").includes(:user)
+      memos = Memo.where(user: current_user.id).where("content LIKE(?)", "%#{keyword}%").where("created_at BETWEEN (?) AND (?)", "#{datestart}%", "#{dateend}%").includes(:user)
+      result.push(diaries, memos)
+    elsif keyword != nil
+      diaries = Diary.where(user_id: current_user.id).where("content LIKE(?)", "%#{keyword}%").includes(:user).order("created_at DESC")
+      memos = Memo.where(user: current_user.id).where("content LIKE(?)", "%#{keyword}%").includes(:user).order("created_at DESC")
+      if diaries == [] && memos == []
+        render json:{result: "検索結果は０件でした"}
+      end
+      result.push(diaries, memos)
+    elsif datestart != nil && dateend != nil
+      diaries = Diary.where(user_id: current_user.id).where("created_at BETWEEN (?) AND (?)", "#{datestart}%", "#{dateend}%").includes(:user)
+      memos = Memo.where(user: current_user.id).where("created_at BETWEEN (?) AND (?)", "#{datestart}%", "#{dateend}%").includes(:user)
+      result.push(diaries, memos)
+    end
+    render json:{result: result}
+  end
+
   private
   def days 
     wdays = ['Sun.','Mon.','Tue.','Wed.','Thu.','Fri.','Sat.']
