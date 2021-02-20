@@ -1,0 +1,204 @@
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 80vw;
+  height: 20vh;
+  text-align: right;
+  margin: 0 auto;
+}
+
+body {
+  /* background-image: url("/assets/p0082_m.jpeg"); */
+  background-size: auto 100%;
+  height: 1000px;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: 0ch;
+  border-radius: 100vh;
+  margin: 3px;
+  box-sizing: inherit;
+  background-color: rgb(150, 214, 150);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.header-list {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+.index-contents {
+  height: 100%;
+  /* width: 90%;
+  text-align: center;
+  align-items: center; */
+}
+
+.contents {
+  height: 80vh;
+}
+
+.day-btn {
+  text-align: center;
+}
+
+.switch-btn {
+  text-align: center;
+  margin-bottom: 30px;
+  /* margin-right: 80px; */
+}
+
+.show-contents {
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.main-content {
+  width: 80vw;
+  height: 80vh;
+  /* display: flex;
+  justify-content: center; */
+  margin: 10px auto;
+}
+
+.contents-posts {
+  margin: 0 10px;
+  text-align: left;
+  height: 500px;
+  width: calc((80vw - 5vw)/2);
+  padding: 0 10px;
+  font-family: 'Kosugi Maru', sans-serif;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  word-break: break-all;
+}
+
+
+.post-form {
+  width: 80vw;
+  /* height: 40vh; */
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box-content {
+  display: block;  
+}
+
+.post-label {
+  display: block;
+  text-align: left;
+}
+
+.lists {
+  display: flex;
+  justify-content: space-between;
+}
+
+#edit-content-btn {
+  margin: 10px 10px 0 0 ;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+#post-title {
+  margin: 10px 10px 0 0 ;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.content-list {
+  margin-top: 10px;
+}
+
+.show-edit-content-list {
+  margin: 10px auto;
+}
+
+.contents-search {
+  margin: 20px 20px;
+  width: 80vw;
+}
+
+#search-box {
+  width: 60vw;
+  margin: 10px 0;
+}
+
+#search-date {
+  display: inline;
+  margin: 0 3px;
+}
+
+#search-btn {
+  margin-left: 20px;
+}
+
+.diary-content {
+  padding-bottom: 20px;
+}
+
+  /* margin-left: 20px; */
+/* /* @media (max-width: 1024px) {
+  .main {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__summary {
+    font-size: 16px;
+  }
+ } */
+
+@media (max-width: 500px) {
+  .show-contents {
+    width: 80vw;
+    margin: 10px auto;
+    display: grid;
+  }
+
+  .contents-posts {
+    width: 80vw;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    word-break: break-all;
+  }
+
+  #devise-sentence {
+    text-align: left;
+    margin: 5px 10px;
+  }
+  
+ }
+
+

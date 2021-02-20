@@ -1,0 +1,44 @@
+.show-main {
+  width: 100%;
+  height: 100%;
+}
+
+.posted-content {
+  margin: 30px auto;
+  padding-top: 50px;
+}
+
+.show-edit-content {
+  margin-bottom: 10px;
+}
+
+/* #edit-btn {
+  text-align: left;
+} */
+
+#content-box {
+  width: 80vw;
+  height: 50vh;
+}
+
+.btn-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+#show-edit-btn {
+  width: 100px;
+  height: 40px;
+}
+
+/* .user-status {
+  display: inline;
+  margin-left: 30px;
+} */
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
