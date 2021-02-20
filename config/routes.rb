@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  resources :diaries, only:[:create, :show, :edit, :update]
   resources :users, only:[:show, :edit, :update] do
     resources :contents, only:[:index]
     post '/contents/search' => "contents#search"
