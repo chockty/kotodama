@@ -1,0 +1,6 @@
+<div class="main">
+  <%= render 'shared/header'%>
+  <%= link_to("LOGOUT", destroy_user_session_path, method: :delete, class: "new-registration") %>
+  <%# LOGOUTは動作確認後に削除します。 %>
+  <%= react_component("Main", { aWeek: @a_week, diaries: @diaries, memos: @memos, user: @user }) %>
+</div>
