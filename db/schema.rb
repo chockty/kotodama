@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_02_18_081351) do
 
   create_table "lineaccounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "uid", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_lineaccounts_on_user_id"
