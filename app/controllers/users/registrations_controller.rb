@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if params[:sns_auth]
       sns = Lineaccount.find(params[:sns_auth])
       if @user = User.find_by(email: params[:user][:email])
-        sns.user = @user
+        sns.user_id = @user.id
         sns.save
         sign_in_and_redirect @user, event: :authentication
       else
@@ -19,16 +19,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
         if super
           @user = User.find_by(email: params[:user][:email])
           Function.create(user_id: @user.id)
-          sns.user = @user
+          sns.user_id = @user.id
           sns.save
-          AutoMaierMailer.send_when_create(@user).deliver
+          SampleMailer.send_when_create(@user).deliver
         end
       end
     elsif !params[:sns_auth]
       super
       @user = User.find_by(email: params[:user][:email])
       Function.create(user_id: @user.id)
-      AutoMaierMailer.send_when_create(@user).deliver
+      SampleMailer.send_when_create(@user).deliver
     end
   end
 
