@@ -44,13 +44,13 @@ class PostCreate extends React.Component {
     fetch(`/${this.state.isPage}`, requestOptions)
     .then(res => {if(!res.ok){
       return (
-        alert("Error, unable to post")
+        alert("エラーが発生しました。再度投稿してください。")
       );
     } else {
       return res.json()
     }})
     .then((response) => {
-      alert(response.result);
+      alert("投稿完了しました。");
       this.props.pageMethod();
       this.props.getContentsMethod("index");
     });
