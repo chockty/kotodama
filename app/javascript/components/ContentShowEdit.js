@@ -194,7 +194,7 @@ class ContentShowEdit extends React.Component {
       <div className="main-content">
         <ul className="show-edit-content-list">
           <li key={`${this.props.post.id}`} className="show-edit-content">{this.state.isContent}</li>
-          <li key={`${this.props.post.id}-created`} className="show-edit-content">{this.props.post.created_at}</li>
+          <li key={`${this.props.post.id}-created`} className="show-edit-content">{this.props.create_date}</li>
         </ul>
         <div className="btn-area">
           <button id="show-edit-btn" onClick={()=>{this.handleIsEdit("blank")}}>編集する</button>
@@ -209,9 +209,9 @@ class ContentShowEdit extends React.Component {
     if (!post.question){
       return null
     } else if ((post.question) && (post.question == 1)){
-      return(<p>Q1</p>)
+      return(<p className="q-num">Q1</p>)
     }else{
-      return(<p>Q2</p>)
+      return(<p className="q-num">Q2</p>)
     };
   };
 
