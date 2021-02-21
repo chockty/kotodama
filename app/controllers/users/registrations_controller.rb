@@ -21,14 +21,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
           Function.create(user_id: @user.id)
           sns.user_id = @user.id
           sns.save
-          SampleMailer.send_when_create(@user).deliver
+          SampleMailer.auto_send(@user).deliver
         end
       end
     elsif !params[:sns_auth]
       super
       @user = User.find_by(email: params[:user][:email])
       Function.create(user_id: @user.id)
-      SampleMailer.send_when_create(@user).deliver
+      SampleMailer.auto_send(@user).deliver
     end
   end
 
