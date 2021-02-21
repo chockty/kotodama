@@ -104,7 +104,7 @@ class Main extends React.Component {
       };
      return (
       <div className="index-contents">
-        <div class="header">
+        <div className="user-header">
           <div><a href={`/users/${this.props.user.id}`}>{this.props.user.nickname}</a></div>
         </div>
         <div className="contents-search">
