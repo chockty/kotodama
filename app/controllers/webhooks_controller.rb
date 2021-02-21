@@ -41,14 +41,14 @@ class WebhooksController < ApplicationController
                       user.function.save
                     end
                     2.times do |num|
-                      Diary.create(user_id: user.id, quetion: num+1)
+                      Diary.create(user_id: user.id, question: num+1)
                     end
                     reply_question(event)
                   end
                 elsif diary[0].content == nil && diary[1].content == nil
                   2.times do |num|
                     diary[num].destroy
-                    Diary.create(user_id: user.id, quetion: num+1)
+                    Diary.create(user_id: user.id, question: num+1)
                   end
                   if user.function.diary_mode == 0 || user.function.diary_mode == 1
                     if user.function.memo_mode == 1
@@ -66,7 +66,7 @@ class WebhooksController < ApplicationController
                 elsif diary[0].created_at.to_s.include?(today) == false
                   if diary[0].content || diary[1].content
                     2.times do |num|
-                      Diary.create(user_id: user.id, quetion: num+1)
+                      Diary.create(user_id: user.id, question: num+1)
                     end
                     if user.function.diary_mode == 0 || user.function.diary_mode == 1
                       if user.function.memo_mode == 1

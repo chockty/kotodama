@@ -9,7 +9,7 @@ class DiariesController < ApplicationController
 
   def create
     2.times do |n|
-      @diary = Diary.new(user_id: create_params[:user], content: create_params[:content][n], quetion: n+1)
+      @diary = Diary.new(user_id: create_params[:user], content: create_params[:content][n], question: n+1)
       if @diary.save == false
         render json:{ result: "Error Occured"}
       end
