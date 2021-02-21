@@ -22,7 +22,6 @@ class PostCreate extends React.Component {
     const authToken = document.querySelector('meta[name="csrf-token"]');
     let contentBody = "";
     if(this.props.value == "diaries"){
-      debugger
       contentBody = {
         user: this.props.user.id,
         content: [this.state.isContentQ1, this.state.isContentQ2]
@@ -54,7 +53,6 @@ class PostCreate extends React.Component {
       alert(response.result);
       this.props.pageMethod();
       this.props.getContentsMethod("index");
-      debugger
     });
   };
 
