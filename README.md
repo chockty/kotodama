@@ -12,8 +12,6 @@
 ・日記投稿/メモ投稿をLINE chat botから利用可能
 ・LINE chat bot から通知が届くリマインド機能を利用可能
 
-(LINEログイン機能 / chat bot連携機能)
-
 ②日記投稿機能
 ジャーナリングを日々の習慣にして頂くよう、2つの質問を用意し、
 その質問に対して日記を投稿頂く仕組みとなっております。
@@ -24,7 +22,7 @@ Webアプリケーション、LINE chat botどちらからでも投稿可能で�
 日々の日記投稿以外に、自分で気づいたことをメモしておく機能があります。
 メモは無制限なので、日記とは別に思ったことを自由に書いて頂くことができます。
 
-④リマインド機能
+④リマインド機能（今後コードで実装予定）
 メールもしくはLINE chat botを活用したリマインドをかけることが可能です。
 リマインドの時間は一律で20:00となっており、リマインドのOFF/ONはwebアプリケーションのユーザ情報画面にて
 設定可能です。
@@ -34,8 +32,6 @@ Webアプリケーション、LINE chat botどちらからでも投稿可能で�
 投稿した日記/メモはwebアプリケーションから閲覧可能です。
 トップページでは今日を基準として前後3日間の投稿を、ボタン切替で閲覧可能です。
 過去の投稿を参照したい場合は、「キーワード検索」「日付検索」にて検索可能です。
-
-(閲覧機能 / 検索機能)
 
 
 ## 目指した課題解決
@@ -66,28 +62,64 @@ Webアプリケーション、LINE chat botどちらからでも投稿可能で�
 後ほど更新します。
 
 ## データベース設計
-後ほど更新します。
+### usersテーブル
+
+| Column                | Type       | Options                   |
+| --------------------- | ---------- | ------------------------- |
+| nickname              | string     | null: false               |
+| email                 | string     | null: false, unique: true |
+| encrypted_password    | string     | null: false               |
+
+#### Association
+- has_one :lineaccount
+- has_one :function
+- has_many :diaries
+- has_many :memos
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### lineaccountsテーブル
 
-Things you may want to cover:
+| Column                     | Type       | Options                        |
+| -------------------------- | ---------- | ------------------------------ |
+| uid                        | string     | null: false, unique: true      |
+| user                       | references | foreign_key :true              |
 
-* Ruby version
+#### Association
+- belongs_to :user
 
-* System dependencies
 
-* Configuration
+### functionsテーブル
 
-* Database creation
+| Column                     | Type       | Options                        |
+| -------------------------- | ---------- | ------------------------------ |
+| line_remind                | integer    | null: false                    |
+| mail_remind                | integer    | null: false                    |
+| diary_mode                 | integer    | null: false                    |
+| memo_mode                  | integer    | null: false                    |
+| user                       | references | null: false, foreign_key :true |
 
-* Database initialization
+#### Association
+- belongs_to :user
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### diariesテーブル
 
-* Deployment instructions
+| Column                     | Type       | Options                        |
+| -------------------------- | ---------- | ------------------------------ |
+| content                    | string     |                                |
+| question                   | integer    | null: false                    |
+| user                       | references | null: false, foreign_key :true |
 
-* ...
+#### Association
+- belongs_to :user
+
+
+### memosテーブル
+
+| Column                     | Type       | Options                        |
+| -------------------------- | ---------- | ------------------------------ |
+| content                    | string     | null: false                    |
+| user                       | references | null: false, foreign_key :true |
+
+#### Association
+- belongs_to :user
