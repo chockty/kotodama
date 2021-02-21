@@ -209,9 +209,9 @@ class ContentShowEdit extends React.Component {
     if (!post.question){
       return null
     } else if ((post.question) && (post.question == 1)){
-      return(<p id="q-num">Q1</p>)
+      return(<p className="q-num">Q1</p>)
     }else{
-      return(<p id="q-num">Q2</p>)
+      return(<p className="q-num">Q2</p>)
     };
   };
 
