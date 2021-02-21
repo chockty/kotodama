@@ -5,6 +5,8 @@ class DiariesController < ApplicationController
 
   def show
     # @article = Article.find(rand(Article.data.length))[:name]
+    @create_date = Date.parse((I18n.l @diary.created_at).to_s)
+    @create_date = Date.new(@create_date.year, @create_date.month, @create_date.day)
   end
 
   def create
