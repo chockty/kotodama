@@ -10,7 +10,8 @@ class ContentsController < ApplicationController
     if params[:fetch] == "ON"
       render json:{diaries: @diaries, memos: @memos}
     else
-      @article = Article.find(rand(Article.data.length))[:name]
+      # @article = Article.find(rand(Article.data.length))[:name]
+          # この機能は後ほど実装します。
       @a_week = days()
       @user = User.find(current_user.id)
     end
