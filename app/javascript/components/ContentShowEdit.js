@@ -18,7 +18,6 @@ class ContentShowEdit extends React.Component {
         isUserEmail: this.props.post[0].email,
         isRemindEmail: this.props.post[1].mail_remind,
         isRemindLine: this.props.post[1].line_remind,
-        isTest: "test"
       };
     };
   };
@@ -49,8 +48,6 @@ class ContentShowEdit extends React.Component {
   };
 
   updateContent(content){
-    this.setState({isTest: "pushed"})
-    debugger
     const authToken = document.querySelector('meta[name="csrf-token"]');
     let contentBody = "";
     let fetchUrl = "";

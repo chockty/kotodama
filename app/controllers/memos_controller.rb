@@ -4,7 +4,7 @@ class MemosController < ApplicationController
   before_action :find_memo, except:[:search, :create]
 
   def show
-    @article = Article.find(rand(Article.data.length))[:name]
+    # @article = Article.find(rand(Article.data.length))[:name]
   end
 
   def create

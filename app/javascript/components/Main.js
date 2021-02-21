@@ -104,6 +104,9 @@ class Main extends React.Component {
       };
      return (
       <div className="index-contents">
+        <div className="user-header">
+          <div><a href={`/users/${this.props.user.id}`}>{this.props.user.nickname}</a></div>
+        </div>
         <div className="contents-search">
           <input type="search" id="search-box" value={this.state.isKeyword} onChange={(e)=>{this.setState({isKeyword: [e.target.value]})}} placeholder="検索ワードを入力してください"></input><br/>
           <input type="date" id="search-date" value={this.state.isDateStart} onChange={(e)=>{this.setState({isDateStart: [e.target.value]})}}></input>

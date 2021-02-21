@@ -5,44 +5,8 @@ class Search extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      // isKeyword: this.props.keyword,
-      // idDateStart: this.props.datestart,
-      // isDateEnd: this.props.dateend,
-      // isResult: this.props.result
     }
   }
-
-  // getPostContent(){
-  //   const authToken = document.querySelector('meta[name="csrf-token"]');
-  //   const contentBody = {
-  //     keyword: this.state.isKeyword,
-  //     datestart: this.state.idDateStart,
-  //     dateend: this.state.isDateEnd
-  //     };
-  //   const fetchUrl = `/users/${this.props.user.id}/contents/search`
-  //   const requestOptions = {
-  //   method: "POST",
-  //   headers: new Headers({ 
-  //     'Content-Type': 'application/json',
-  //     'Accept': 'application/json',
-  //     'X-CSRF-Token': authToken.content
-  //   }),
-  //   body: JSON.stringify(contentBody)
-  //   };
-
-  //   fetch(`${fetchUrl}`, requestOptions)
-  //   .then(res => {if(!res.ok){
-  //     return (
-  //       alert("Error, unable to get posts")
-  //     );
-  //   } else {
-  //     return res.json()
-  //   }})
-  //   .then((response) => {
-  //     this.setState({isResult: response.result})
-  //     return null
-  //   });
-  // };
 
   render(){
     const diaryList = [];
