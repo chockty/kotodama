@@ -62,8 +62,15 @@ LINE連携機能の一つとして採用しているLINE loginのデモ映像で
 （流れ）
 トップ画面〜新規登録画面〜LINE login実施〜ユーザのindex画面
 
-
 ![result](https://user-images.githubusercontent.com/75976150/108626795-6518b800-7495-11eb-9ea8-b6860e11c128.gif)
+
+
+②LINE chat bot
+LINE chat botからの投稿、及びトップページへのデモ映像です。
+
+![result](https://user-images.githubusercontent.com/75976150/108628007-bb88f500-749b-11eb-96cb-b4ccc10c3de6.gif)
+![result](https://user-images.githubusercontent.com/75976150/108628058-fc810980-749b-11eb-841c-094fa64e4023.gif)
+![result](https://user-images.githubusercontent.com/75976150/108628083-1b7f9b80-749c-11eb-9fb3-1dc37b957071.gif)
 
 
 ## 利用方法（テスト用アカウント）
