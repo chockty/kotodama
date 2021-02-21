@@ -61,6 +61,8 @@ LINE連携機能の一つとして採用しているLINE loginのデモ映像で
 
 （流れ）
 トップ画面〜新規登録画面〜LINE login実施〜ユーザのindex画面
+
+
 ![result](https://user-images.githubusercontent.com/75976150/108626795-6518b800-7495-11eb-9ea8-b6860e11c128.gif)
 
 
