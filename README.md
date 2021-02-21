@@ -71,12 +71,9 @@ LINE chat botからの投稿、及びトップページへのデモ映像です�
 （流れ）
 左から
 ・chat bot画面〜日記投稿　　　・メモ投稿　　　・トップページ遷移
-
-![result](https://user-images.githubusercontent.com/75976150/108628007-bb88f500-749b-11eb-96cb-b4ccc10c3de6.gif)
-
-![result](https://user-images.githubusercontent.com/75976150/108628058-fc810980-749b-11eb-841c-094fa64e4023.gif)
-
-![result](https://user-images.githubusercontent.com/75976150/108628083-1b7f9b80-749c-11eb-9fb3-1dc37b957071.gif)
+![result](https://user-images.githubusercontent.com/75976150/108628007-bb88f500-749b-11eb-96cb-b4ccc10c3de6.gif)　
+![result](https://user-images.githubusercontent.com/75976150/108628058-fc810980-749b-11eb-841c-094fa64e4023.gif)　
+![result](https://user-images.githubusercontent.com/75976150/108628083-1b7f9b80-749c-11eb-9fb3-1dc37b957071.gif)　
 
 
 ## 利用方法（テスト用アカウント）
