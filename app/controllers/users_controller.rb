@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user_func = [@user, @user.function]
-    @article = Article.find(rand(Article.data.length))[:name]
+    # @article = Article.find(rand(Article.data.length))[:name]
+    # こちらの機能は後ほど実装します。
   end
 
   def edit
