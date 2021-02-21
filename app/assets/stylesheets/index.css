@@ -99,8 +99,7 @@ a {
 
 
 .post-form {
-  width: 80vw;
-  /* height: 40vh; */
+  width: 50vw;
   margin: 10px auto;
   display: flex;
   flex-direction: column;
@@ -206,6 +205,13 @@ a {
     width: 80vw;
     height: 80vh;
     margin: 10px auto;
+  }
+
+  .post-form {
+    width: 80vw;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
   }
   
  }
