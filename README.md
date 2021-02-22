@@ -95,7 +95,13 @@ https://koto-dama.herokuapp.com/
 - Email：　test@test
 - Password：　123456
 
-
+## 開発環境
+・Ruby  
+・Ruby on rails  
+・React  
+・VScode(Visual Studio Code)  
+・Messasing API  
+・LINE login  
 
 ## データベース設計
 ### usersテーブル
