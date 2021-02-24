@@ -10,4 +10,11 @@ class SampleMailer < ApplicationMailer
     mail to:      user.email,
          subject: '登録ありがとうございます！'
   end
+
+  def auto_broadcast(user_emails)
+    user_emails.each do |email|
+      mail to: email,
+           subject: '【koto-dama】本日の振り返り'
+    end
+  end
 end
