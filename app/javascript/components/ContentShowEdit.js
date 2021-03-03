@@ -167,6 +167,13 @@ class ContentShowEdit extends React.Component {
               {this.state.isRemindLine == 1? (<div id="show-user-remind-line-box" className="user-status">ON</div>):
               (<div id="show-user-remind-line-box" className="user-status">OFF</div>)}
             </li>
+
+            <li key="show-chat-bot-qr" id="show-chat-bot-qr">
+              <div id="qr-img-tag">
+                <label htmlFor="qr-img" className="user-label">LINE chat-bot の友達登録はこちらから。</label>
+                <img src="/assets/koto-dama_chat.png" alt="QR" id="qr-img"/>
+              </div>
+            </li>
           </ul>
           <div className="btn-area">
             <button id="show-edit-btn" onClick={()=>{this.handleIsEdit("blank")}}>編集する</button>

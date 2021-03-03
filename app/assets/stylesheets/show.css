@@ -46,6 +46,15 @@
   margin-bottom: 20px;
 }
 
+/* #qr-img {
+  margin-left: 100px;
+} */
+
+#qr-img-tag {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (max-width: 500px) {
   .q-num {
     margin-left: 30px;
