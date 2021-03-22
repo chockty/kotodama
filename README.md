@@ -104,6 +104,10 @@ https://koto-dama.herokuapp.com/
 ・LINE login  
 
 ## データベース設計
+
+### ER図
+![er_kotodama](https://user-images.githubusercontent.com/75976150/111958460-9c2fc700-8b30-11eb-92a2-7f0c4567eb61.png)
+
 ### usersテーブル
 
 | Column                | Type       | Options                   |
